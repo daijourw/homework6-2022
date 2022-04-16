@@ -65,8 +65,12 @@ document.querySelector("#slider").addEventListener("click", function() {
 	// slider returns 0-100, gotta convert to divide by 100
 });
 document.querySelector("#vintage").addEventListener("click", function() {
-	// document.getElementById("video").classList.add("oldSchool")
-	document.getElementByName("video").className += " oldSchool";
+	document.querySelector(".video").className = "oldSchool"
+	// document.getElementsByName("video").className = "oldSchool"
+});
+document.querySelector("#orig").addEventListener("click", function() {
+	// document.getElementsByName("video").className = "video"
+	document.querySelector(".oldSchool").className = "video"
 });
 
 /* <button id = "vintage">Old School</button>
