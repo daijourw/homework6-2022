@@ -32,7 +32,7 @@ document.querySelector("#faster").addEventListener("click", function() {
 // skip ahead button
 document.querySelector("#skip").addEventListener("click", function() {
 	console.log("Current time is " + video.currentTime)
-	video.currentTime += 0.15
+	video.currentTime += 15
 	
 	if (video.currentTime > video.duration) {
 		video.currentTime = 0
