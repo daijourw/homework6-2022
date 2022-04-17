@@ -6,13 +6,13 @@ window.addEventListener("load", function() {
 	video.loop = false
 	// console.log("The current volume is" + video.volume)
 	// javascript can concatenate strings and numbers
-	document.querySelector("#volume").innerHTML = video.volume * 100 + "%"
 
 });
 
 document.querySelector("#play").addEventListener("click", function() {
 	console.log("Play Video");
 	video.play()
+	document.querySelector("#volume").innerHTML = video.volume * 100 + "%"
 });
 document.querySelector("#pause").addEventListener("click", function() {
 	console.log("Pause Video");
@@ -33,8 +33,8 @@ document.querySelector("#faster").addEventListener("click", function() {
 document.querySelector("#skip").addEventListener("click", function() {
 	console.log("Current time is " + video.currentTime)
 	video.currentTime += 15
-	
-	if (video.currentTime > video.duration) {
+	console.log(video.duration)
+	if (video.currentTime >= video.duration) {
 		video.currentTime = 0
 	}
 	console.log("New time is " + video.currentTime)
@@ -46,9 +46,10 @@ document.querySelector("#mute").addEventListener("click", function() {
 	
 	if (video.muted == true) {
 		video.muted = false
-		this.value = "Unmute"
+		document.querySelector("#mute").innerHTML = "Mute"
 	} else {
 		video.muted = true
+		document.querySelector("#mute").innerHTML = "Unmute"
 	}
 	// check if currently muted, mute == true
 	// set muted false and update text in button
